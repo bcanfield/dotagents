@@ -1,53 +1,43 @@
 # What I feed the robots
 
-One version-controlled home (`~/.agents/skills/`) for all agent skills — both ones I write and ones installed from the [skills CLI](https://skills.sh). Claude Code picks everything up globally via symlinks in `~/.claude/skills/`.
-
-## How it's wired
+All my agent skills live in `skills/` here. Some I write myself, some come from the [skills cli](https://skills.sh). Claude Code finds them all through symlinks in `~/.claude/skills/`.
 
 ```
-~/.agents/skills/<name>/SKILL.md     <- actual skill content lives here (this repo)
-~/.claude/skills/<name>              <- symlink pointing back to ../../.agents/skills/<name>
-.skill-lock.json                     <- tracks which skills the CLI manages (don't edit by hand)
+~/.agents/skills/<name>/SKILL.md    actual skill, lives in this repo
+~/.claude/skills/<name>             symlink pointing back at the line above
+.skill-lock.json                    what the cli owns. don't hand-edit
 ```
 
-The CLI only touches skills listed in `.skill-lock.json`. Anything not in the lockfile is mine — `skills update` / `skills remove` will never disturb it.
+The cli only touches skills listed in the lockfile, so my own skills are safe from `skills update` / `skills remove` as long as I keep them out of it.
 
-## Installing a skill from the CLI
+## Installing from the cli
 
-```sh
+```
 npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
 ```
 
-Then select **claude-code**, **global**, **sym-link**. (At the time of writing there's a bug with the `-g` flag.)
+Then select claude-code, global, sym-link. At the time of writing this there's a bug with the `-g` flag. It installs into `skills/` and makes the symlink for me. Commit the new folder plus `.skill-lock.json`.
 
-This installs into `~/.agents/skills/<name>` and creates the `~/.claude/skills/<name>` symlink automatically. Commit the new directory plus the updated `.skill-lock.json`.
+## Writing my own
 
-## Writing my own skill
-
-```sh
+```
 cd ~/.agents/skills
-npx skills init my-skill                                      # scaffolds my-skill/SKILL.md
-ln -s ../../.agents/skills/my-skill ~/.claude/skills/my-skill # make Claude Code see it globally
+npx skills init my-skill
+ln -s ../../.agents/skills/my-skill ~/.claude/skills/my-skill
 ```
 
-Then edit `my-skill/SKILL.md` — the frontmatter `name:` and `description:` are what trigger it. Commit when happy. New Claude Code sessions pick it up automatically.
+The `name:` and `description:` frontmatter in SKILL.md is what makes it trigger. New Claude Code sessions pick it up automatically. Commit when happy.
 
-Rules for custom skills:
-
-- Don't reuse a name that a CLI-managed skill has (or might want) — `skills add` would prompt to overwrite and the lockfile would claim ownership.
-- Don't add custom skills to `.skill-lock.json` — staying out of it is what protects them.
+Two things to avoid: don't name a skill the same as something the cli installed (`skills add` will offer to overwrite it), and don't add my own skills to the lockfile.
 
 ## Maintenance
 
-| Task | Command |
-|---|---|
-| Update CLI-managed skills | `npx skills update` (then commit changes) |
-| Remove a CLI-managed skill | `npx skills remove <name>` (cleans up the symlink too) |
-| Remove a custom skill | `rm -r ~/.agents/skills/<name> ~/.claude/skills/<name>` |
-| List what the CLI manages | `npx skills ls` |
-| Restore on a new machine | clone this repo to `~/.agents`, then re-create the symlinks (see below) |
+- `npx skills update` updates cli-managed skills, then commit
+- `npx skills remove <name>` also cleans up the symlink
+- removing one of mine: `rm -r ~/.agents/skills/<name> ~/.claude/skills/<name>`
+- `npx skills ls` shows what the cli thinks it owns
 
-### New machine setup
+## New machine
 
 ```sh
 git clone <this repo> ~/.agents
