@@ -6,109 +6,27 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-03-30T19:24:55.632Z",
-      "updatedAt": "2026-03-30T19:24:55.632Z"
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-06-05T14:00:12.366Z",
+      "updatedAt": "2026-06-05T14:00:15.048Z"
     },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",
       "sourceUrl": "https://github.com/shadcn/ui.git",
       "skillPath": "skills/shadcn/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-01T18:59:01.202Z",
-      "updatedAt": "2026-04-01T18:59:01.202Z"
+      "skillFolderHash": "34db419996afc09836f01062606316f2728884c4",
+      "installedAt": "2026-06-05T14:02:47.941Z",
+      "updatedAt": "2026-06-05T14:04:36.418Z"
     },
-    "nextjs-app-router-patterns": {
-      "source": "wshobson/agents",
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/wshobson/agents.git",
-      "skillPath": "plugins/frontend-mobile-development/skills/nextjs-app-router-patterns/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:23.379Z",
-      "updatedAt": "2026-04-04T17:20:23.379Z"
-    },
-    "typescript-advanced-types": {
-      "source": "wshobson/agents",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/wshobson/agents.git",
-      "skillPath": "plugins/javascript-typescript/skills/typescript-advanced-types/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:26.833Z",
-      "updatedAt": "2026-04-04T17:20:26.833Z"
-    },
-    "claude-api": {
-      "source": "anthropics/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/anthropics/skills.git",
-      "skillPath": "skills/claude-api/SKILL.md",
-      "skillFolderHash": "",
-      "pluginName": "claude-api",
-      "installedAt": "2026-04-04T17:20:31.299Z",
-      "updatedAt": "2026-04-04T17:20:31.299Z"
-    },
-    "playwright-e2e-testing": {
-      "source": "bobmatnyc/claude-mpm-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/bobmatnyc/claude-mpm-skills.git",
-      "skillPath": "toolchains/javascript/testing/playwright/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:34.794Z",
-      "updatedAt": "2026-04-04T17:20:34.794Z"
-    },
-    "threejs": {
-      "source": "mrgoonie/claudekit-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mrgoonie/claudekit-skills.git",
-      "skillPath": ".claude/skills/threejs/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:39.877Z",
-      "updatedAt": "2026-04-04T17:20:39.877Z"
-    },
-    "tailwindcss-animations": {
-      "source": "josiahsiegel/claude-plugin-marketplace",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/josiahsiegel/claude-plugin-marketplace.git",
-      "skillPath": "plugins/tailwindcss-master/skills/tailwindcss-animations/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:43.731Z",
-      "updatedAt": "2026-04-04T17:20:43.731Z"
-    },
-    "tailwindcss-advanced-layouts": {
-      "source": "josiahsiegel/claude-plugin-marketplace",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/josiahsiegel/claude-plugin-marketplace.git",
-      "skillPath": "plugins/tailwindcss-master/skills/tailwindcss-advanced-layouts/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:47.179Z",
-      "updatedAt": "2026-04-04T17:20:47.179Z"
-    },
-    "typescript-react-reviewer": {
-      "source": "dotneet/claude-code-marketplace",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/dotneet/claude-code-marketplace.git",
-      "skillPath": "review-tool/skills/typescript-react-reviewer/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:20:49.956Z",
-      "updatedAt": "2026-04-04T17:20:49.956Z"
-    },
-    "react-three-fiber": {
-      "source": "vercel-labs/json-render",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/json-render.git",
-      "skillPath": "skills/react-three-fiber/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:21:17.409Z",
-      "updatedAt": "2026-04-04T17:21:17.409Z"
-    },
-    "tanstack-query": {
-      "source": "bobmatnyc/claude-mpm-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/bobmatnyc/claude-mpm-skills.git",
-      "skillPath": "toolchains/typescript/state/tanstack-query/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-04T17:21:20.698Z",
-      "updatedAt": "2026-04-04T17:21:20.698Z"
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/agent-browser/SKILL.md",
+      "skillFolderHash": "c1470a475a0472fceda2401ea6763708a91680a8",
+      "installedAt": "2026-06-05T14:03:48.733Z",
+      "updatedAt": "2026-06-05T14:04:59.238Z"
     }
   },
   "dismissed": {
@@ -127,7 +45,6 @@
     "kimi-code-cli",
     "opencode",
     "warp",
-    "zed",
-    "claude-code"
+    "zed"
   ]
 }
