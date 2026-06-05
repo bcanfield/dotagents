@@ -2,7 +2,7 @@
   <img src="assets/feeding-the-robots.gif" alt="Pixel-art conveyor belt feeding skills, floppies, cartridges, and coffee to a happy robot under a SKILL INTAKE sign" width="100%">
 </p>
 
-# What I feed the robots
+## Skills
 
 Agent skills live in `skills/` here. Some I write, some come from the [skills cli](https://skills.sh). Claude Code finds them all through symlinks in `~/.claude/skills/`.
 
