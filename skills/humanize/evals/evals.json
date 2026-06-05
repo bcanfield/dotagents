@@ -1,0 +1,26 @@
+{
+  "skill_name": "humanize",
+  "evals": [
+    {
+      "id": 0,
+      "name": "rewrite-ai-slop",
+      "prompt": "I wrote this blog post draft but people keep telling me it sounds like ChatGPT wrote it. Can you rewrite it so it doesn't sound AI generated? Keep the same overall points. The draft is in ai-draft.md.",
+      "expected_output": "A rewritten version with no AI-tell vocabulary, no negative parallelism, no formulaic structure, varied sentence rhythm, and the same substantive claims preserved.",
+      "files": ["fixtures/ai-draft.md"]
+    },
+    {
+      "id": 1,
+      "name": "write-new-announcement",
+      "prompt": "Write a short blog post (300-400 words) announcing that our open-source CLI tool 'shipit' v2.0 is out. Big changes: config file moved from JSON to TOML (breaking change, there's a migration command 'shipit migrate'), deploys are now parallel so a typical 12-service deploy went from about 8 minutes to under 2, and we dropped Node 16 support. Audience is developers who already use the tool. It should sound like a person wrote it, not marketing.",
+      "expected_output": "A release announcement that leads with concrete changes, uses the provided specifics, has varied rhythm, no AI vocabulary or structures, and a developer-to-developer tone.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "write-linkedin-post",
+      "prompt": "I need a linkedin post about a lesson I learned: we spent 3 months building a custom auth system and then threw it away and switched to a managed provider. it was my call originally to build it. don't make it cringe or sound like every other AI linkedin post.",
+      "expected_output": "A LinkedIn post with a real point of view, admits the mistake plainly, no 'I'm excited to share', no negative parallelism, no rule-of-three stacking, no generic growth-opportunity framing.",
+      "files": []
+    }
+  ]
+}
