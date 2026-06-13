@@ -1,0 +1,50 @@
+{
+  "skill_name": "agents-md",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "create-from-scratch",
+      "prompt": "I want coding agents (Claude Code, Cursor, Codex) to work well in this repo. Set up agent instruction docs for it — whatever files make sense.",
+      "expected_output": "A lean AGENTS.md (commands verified against package.json incl. pnpm, required env vars, the load-bearing legacy/ dir) plus Claude Code compat via CLAUDE.md symlink or @AGENTS.md import. No directory-tree dumps or discoverable stack prose.",
+      "files": ["fixtures/fixture-create"],
+      "assertions": [
+        "Creates AGENTS.md as the canonical instruction file at the repo root",
+        "Provides Claude Code compatibility: a CLAUDE.md symlink to AGENTS.md or a CLAUDE.md containing an @AGENTS.md import",
+        "Every command listed exists in package.json scripts (no invented commands) and respects the pnpm packageManager field",
+        "Documents required env vars (DATABASE_URL, STRIPE_API_KEY) or points to .env.example as required-at-boot",
+        "Captures the non-discoverable gotcha: src/legacy/ looks dead but is load-bearing (quarter-end CSV imports) and must not be deleted",
+        "Stays lean: no directory-tree dump, no stack overview prose restating package.json, file under ~80 lines"
+      ]
+    },
+    {
+      "id": 1,
+      "eval_name": "audit-bloated-claude-md",
+      "prompt": "Our CLAUDE.md has grown into a mess over the past year and honestly the agent seems to ignore half of it now. Can you review it and clean it up?",
+      "expected_output": "Identifies and fixes the seeded problems: stale commands, dead paths, the async contradiction, prettier-enforced rules, vague lines, emphasis inflation, directory dump. Result is a much shorter accurate file with justified removals.",
+      "files": ["fixtures/fixture-audit"],
+      "assertions": [
+        "Removes or flags the stale commands: 'npm run e2e' (not in package.json) and './scripts/deploy.sh' (file does not exist)",
+        "Fixes dead path references: src/db/ (code moved to src/data/) and docs/API.md (does not exist)",
+        "Resolves the contradiction between 'always use async/await' and 'prefer .then() chains' (keeps at most one or flags it)",
+        "Removes style rules already enforced by .prettierrc (semicolons, single quotes, 100-char lines)",
+        "Removes vague/aspirational lines ('write clean code', 'be careful', 'follow best practices', 'never break the build') and the directory-tree dump",
+        "Final file is at most half the original's line count while retaining the real commands (start, test, lint, build, format)",
+        "Removals are justified to the user (a summary or per-removal reasons, with uncertain items flagged as questions rather than silently deleted)"
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "update-after-migration",
+      "prompt": "We just finished migrating our tests from Jest to Vitest, and 1.8 added a required REDIS_URL env var (service exits at boot without it). Update our agent docs to match.",
+      "expected_output": "AGENTS.md updated: vitest commands incl. single-file invocation, jest mock convention replaced, REDIS_URL requirement noted. The drifted .cursorrules is also fixed or consolidated. File stays lean.",
+      "files": ["fixtures/fixture-update"],
+      "assertions": [
+        "AGENTS.md test commands updated to Vitest, including a working single-file invocation (e.g. npx vitest run src/foo.test.ts)",
+        "The Jest mock convention line is replaced or removed; no remaining Jest references in AGENTS.md",
+        "REDIS_URL is documented as required (service exits at boot without it)",
+        "The drifted .cursorrules (still says Jest) is addressed: updated, consolidated into AGENTS.md, or its removal proposed",
+        "File stays lean: no unrelated new sections, no directory maps, final AGENTS.md within ~10 lines of the original length"
+      ]
+    }
+  ]
+}

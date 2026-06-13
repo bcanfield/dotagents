@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Skill creator workspace convention
+*-workspace/
+
+# Editor / OS noise
+*.swp
+.idea/
